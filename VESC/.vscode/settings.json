@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "main.h": "c",
+        "vesc_can.h": "c"
+    }
+}
