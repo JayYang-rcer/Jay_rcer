@@ -1,2 +1,6 @@
 # Jay_rcer
 Jay的个人仓库
+
+HAL_RM_MOTOR是控制RM电机的学习代码
+MOTOR_PLAN_PACKED是封装了2006和3508电机各种电机模式规划的代码，后续会继续补充
+ros_stm32_usart 是使用串口进行上下位机通讯的代码
