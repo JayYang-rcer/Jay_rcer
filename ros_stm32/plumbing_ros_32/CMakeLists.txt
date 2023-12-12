@@ -7,16 +7,11 @@ find_package(catkin REQUIRED COMPONENTS
   roscpp
   rospy
   std_msgs
+  geometry_msgs
+  message_generation
 )
 
 
-
-catkin_package(
-#  INCLUDE_DIRS include
-#  LIBRARIES plumbing_ros_32
-#  CATKIN_DEPENDS roscpp rospy std_msgs
-#  DEPENDS system_lib
-)
 
 ###########
 ## Build ##
@@ -27,6 +22,26 @@ catkin_package(
 include_directories(
 include
   ${catkin_INCLUDE_DIRS}
+)
+
+## 配置 msg 源文件
+add_message_files(
+  FILES
+  r2_controller.msg
+)
+
+# 生成消息时依赖于 std_msgs
+generate_messages(
+  DEPENDENCIES
+  std_msgs
+  geometry_msgs
+)
+
+catkin_package(
+#  INCLUDE_DIRS include
+#  LIBRARIES plumbing_ros_32
+ CATKIN_DEPENDS roscpp rospy std_msgs geometry_msgs message_runtime 
+#  DEPENDS system_lib
 )
 
 add_library(head_src
